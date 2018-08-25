@@ -1,5 +1,4 @@
 # require modules here
-require 'yaml'
 def load_library(library)
   new_hash = {
    "get_meaning" => {},
