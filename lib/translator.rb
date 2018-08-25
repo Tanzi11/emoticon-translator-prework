@@ -6,6 +6,7 @@ def load_library(emoticon_file)
   emoticon_lib = {'get_meaning'  => {},
                   'get_emoticon' => {} }
                   
+                  
 
 
 
