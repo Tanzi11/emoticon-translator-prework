@@ -1,5 +1,6 @@
 # require modules here
 require 'yaml'
+
 esponse = {"get_meaning" => {}, "get_emoticon" => {}}
   library = YAML.load_file(yaml_file)
   library.each do |trans, emos|
@@ -7,7 +8,7 @@ esponse = {"get_meaning" => {}, "get_emoticon" => {}}
     response["get_emoticon"][emos[0]] = emos[1]
   end
   response
-end	end
+end
 
 def load_library
   # code goes here
