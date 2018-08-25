@@ -1,13 +1,17 @@
 # require modules here
 require 'yaml'
-def load_library(yaml_file)
-response = {"get_meaning" => {}, "get_emoticon" => {}}
-  library = YAML.load_file(yaml_file)
-  library.each do |trans, emos|
-    response["get_meaning"][emos[1]] = trans
-    response["get_emoticon"][emos[0]] = emos[1]
-  end
-  response
+def load_library(library)
+  new_hash = {
+   "get_meaning" => {},
+   "get_emoticon" => {}
+ }
+ library.each do |meaning, translation|
+   english = translation[0]
+   japanese = translation[1]
+   new_hash["get_meaning"][japanese] = meaning
+   new_hash["get_emoticon"][english] = japanese
+ end
+  return new_hash
 end
 
 def load_library
