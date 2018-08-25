@@ -2,7 +2,9 @@
 require "yaml"
 
 def load_library(file_path)
-  
+  hash = {"get_emoticon" => {}, "get_meaning" => {} }
+  YAML.load_file(file_path).each do |meaning, emot_arr|
+    
 
 def load_library
   # code goes here
